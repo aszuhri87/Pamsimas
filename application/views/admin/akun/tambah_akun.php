@@ -73,7 +73,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group ">
+                                <div class="form-group">
                                     <label for="password" class="control-label col-sm-2">Password <span
                                         class="required">*</span></label>
                                     <div class="col-md-10">
