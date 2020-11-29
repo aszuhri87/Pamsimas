@@ -26,11 +26,54 @@
                                 </nav>
                             </div> -->
                             <div class="sidenav-menu-heading">App Views</div>
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePegawai" aria-expanded="false" aria-controls="collapsePegawai">
+                                <div class="nav-link-icon"><i data-feather="user"></i></div>
+                                Pegawai
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePegawai" data-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav" id="accordionSidenav">
+                                    <a class="nav-link" href="tambah_pegawai">
+                                        Tambah Pegawai
+                                  
+                                    </a>
+                                    <a class="nav-link" href="data_pegawai">
+                                        Data Pegawai
+                                       
+                                    </a>
+        
+                                </nav>
+                            </div>
+
+                            
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePelanggan" aria-expanded="false" aria-controls="collapsePelanggan">
+                                <div class="nav-link-icon"><i data-feather="user"></i></div>
+                                Pelanggan
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePelanggan" data-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav" id="accordionSidenav">
+                                    <a class="nav-link" href="tambah_pelanggan">
+                                        Tambah Pelanggan
+                                  
+                                    </a>
+                                    <a class="nav-link" href="data_pelanggan">
+                                        Data Pelanggan
+                                       
+                                    </a>
+        
+                                </nav>
+                            </div>
+
                             <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                                <div class="nav-link-icon"><i data-feather="grid"></i></div>
+                                <div class="nav-link-icon"><i data-feather="dollar-sign"></i></div>
                                 Tagihan
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
+
+                          
+                            
+
                                     <!-- <div class="collapse" id="pagesCollapseKnowledgeBase" data-parent="#accordionSidenavPagesMenu"> -->
                             <!-- <div class="collapse" id="collapsePages" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
@@ -161,11 +204,35 @@
                                     </a>
                                 </nav>
                             </div> -->
+
+                  
+                            
+
                             <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseFlows" aria-expanded="false" aria-controls="collapseFlows">
                                 <div class="nav-link-icon"><i data-feather="repeat"></i></div>
                                 Histori Belanja
                                 <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
+
+                            <div class="sidenav-menu-heading">Akun App</div>
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-toggle="collapse" data-target="#collapseAkun" aria-expanded="false" aria-controls="collapseAkun">
+                                <div class="nav-link-icon"><i data-feather="users"></i></div>
+                                Manajemen Akun
+                                <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseAkun" data-parent="#accordionSidenav">
+                                <nav class="sidenav-menu-nested nav" id="accordionSidenav">
+                                    <a class="nav-link" href="tambah_akun">
+                                        Tambah Akun
+                                  
+                                    </a>
+                                    <a class="nav-link" href="akun/data_akun">
+                                        Data Akun
+                                       
+                                    </a>
+        
+                                </nav>
+                            </div>
                             <!-- <div class="collapse" id="collapseFlows" data-parent="#accordionSidenav">
                                 <nav class="sidenav-menu-nested nav">
                                     <a class="nav-link" href="multi-tenant-select.html">Multi-Tenant Registration</a>

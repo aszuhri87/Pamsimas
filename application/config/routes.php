@@ -52,3 +52,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'homepage';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
+$route['beranda']='admin/beranda';
+
+
+$route['tambah_pelanggan']='admin/tambah_pelanggan';
+$route['data_pelanggan']='admin/data_pelanggan';
+$route['edit_pelanggan']='admin/edit_pelanggan';
+
+$route['tambah_pegawai']='admin/tambah_pegawai';
+$route['data_pegawai']='admin/data_pegawai';
+$route['edit_pegawai']='admin/edit_pegawai';
+
+// $route['akun/akun']='admin/akun/akun_home/$1';
+
+$route['tambah_akun']='akunapp/tambah_akun';
+$route['data_akun']='akunapp/data_akun';
+$route['edit_akun']='akunapp/edit_akun';
+

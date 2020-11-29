@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Mirrored from themes.startbootstrap.com/sb-admin-pro/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Oct 2020 10:49:12 GMT -->
 <head>
         <title>PAMSIMAS</title>
@@ -10,6 +10,9 @@
         <link rel="icon" type="image/x-icon" href="<?= base_url()?>assets/img/favicon.png" />
         <script data-search-pseudo-elements defer src="<?= base_url()?>sbadmin/cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" ></script>
         <script src="<?= base_url()?>sbadmin/cdnjs.cloudflare.com/ajax/libs/feather-icons/4.27.0/feather.min.js" ></script>
+
+
+     
     </head>
     <body class="nav-fixed">
         <nav class="topnav navbar navbar-expand shadow navbar-light bg-white" id="sidenavAccordion">
