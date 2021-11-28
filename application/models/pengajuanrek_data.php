@@ -1,23 +1,16 @@
 <?php 
  
-class Akun_data extends CI_Model{
+class Pengajuanrek_data extends CI_Model{
 	function tampil_data(){
-   
-        $this->db->select('akun_app.*, pegawai.nm_pegawai'); 		
-        $this->db->from('akun_app'); 		
-        $this->db->join('pegawai', 'pegawai.id_pegawai=akun_app.id_pegawai'); 		
+        $this->db->select('pengajuan_rekening.*, pegawai.nm_pegawai,pelanggan.nik'); 		
+        $this->db->from('pengajuan_rekening'); 		
+        $this->db->join('pegawai', 'pegawai.id_pegawai=pengajuan_rekening.id_pegawai','LEFT'); 
+        $this->db->join('pelanggan', 'pelanggan.nik=pengajuan_rekening.nik','LEFT');		
         $query = $this->db->get(); 		
         return $query->result();
 	}
- 
-	function input_data($data,$table){
-		$this->db->insert($table,$data);
-	}
 
 	function edit_data($where,$table){		
-		return $this->db->get_where($table,$where);
-	}
-	function cek_login($where,$table){		
 		return $this->db->get_where($table,$where);
 	}
  

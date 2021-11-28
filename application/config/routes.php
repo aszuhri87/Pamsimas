@@ -54,20 +54,28 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
-$route['beranda']='admin/beranda';
+$route['admin/dashboard']='admin/homepage';
 
 
-$route['tambah_pelanggan']='admin/tambah_pelanggan';
-$route['data_pelanggan']='admin/data_pelanggan';
-$route['edit_pelanggan']='admin/edit_pelanggan';
+$route['admin/login']='admin/auth/doLogin';
 
-$route['tambah_pegawai']='admin/tambah_pegawai';
-$route['data_pegawai']='admin/data_pegawai';
-$route['edit_pegawai']='admin/edit_pegawai';
+$route['admin/tambah_pelanggan']='admin/pelanggan/tambah_pelanggan';
+$route['admin/data_pelanggan']='admin/pelanggan/data_pelanggan';
+$route['admin/edit_pelanggan']='admin/pelanggan/edit_pelanggan';
+
+$route['admin/tambah_pegawai']='admin/pegawai/tambah_pegawai';
+$route['admin/data_pegawai']='admin/pegawai/data_pegawai';
+$route['admin/edit_pegawai']='admin/pegawai/edit_pegawai';
 
 // $route['akun/akun']='admin/akun/akun_home/$1';
 
-$route['tambah_akun']='akunapp/tambah_akun';
-$route['data_akun']='akunapp/data_akun';
-$route['edit_akun']='akunapp/edit_akun';
+$route['admin/tambah_akun']='akunapp/tambah_akun';
+$route['admin/data_akun']='admin/akunapp/data_akun';
+$route['admin/edit_akun']='akunapp/edit_akun';
 
+$route['admin/tambah_pengumuman']='admin/pengumuman/tambah_pengumuman';
+$route['admin/data_pengumuman']='admin/pengumuman/data_pengumuman';
+$route['admin/edit_pengumuman']='admin/pengumuman/edit_pengumuman';
+
+$route['admin/setting_tagihan']='admin/settagihan/index';
+$route['admin/pengajuan_rekening']='admin/pengajuanrek/index';

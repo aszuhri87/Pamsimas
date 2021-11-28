@@ -8,7 +8,7 @@
                    
 
                     <!-- Main page content-->
-                    <div class="container mt-1  py py-xl-0">
+                    <div class="container mt-1">
                         <!-- <div class="row">
                             <div class="col-xxl-4 col-xl-12 mb-4">
                                 <div class="card h-100">
@@ -38,46 +38,79 @@
                         <section class="panel">
                         
                             
+<!-- Modal 1-->
+<div class="modal fade" id="tbhNewsModal" tabindex="-1" role="dialog" aria-labelledby="tbhNewsModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tbhNewsModalTitle">Tambah Pengumuman</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+            <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url(). 'admin/pengumuman/tambah_pengumuman_aksi'; ?>">
+                                <div class="form-group ">
+                                <label for="tgl_publish" class="control-label col-sm-2">Tanggal Publish <span class="required">*</span></label>
+                                <div class="col-md-10">
+                                    <input  class="form-control" id="tgl_publish" name="tgl_publish"  type="date" required />
+                                </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label for="isi_pengumuman" class="control-label col-sm-2">Isi Pengumuman <span
+                                        class="required">*</span></label>
+                                    <div class="col-md-10">
+                                    <textarea class="form-control" id="isi_pengumuman" name="isi_pengumuman" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-lg-2">Pegawai <span class="required">*</span></label>
+                                    <div class="col-lg-10">
+                                    <input class="form-control" id="id_pegawai" name="id_pegawai" type="text" value="<?php echo $this->session->userdata('id_pegawai')?>"  />
+                                    
+                                    </div>
+                                </div>
+    
+                                
+                                </form>
+            </div>
+            </div>
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save changes</button></div>
+        </div>
+    </div>
 
 
 
 <div class="card mb-4">
-<div class="card-header">Data Akun</div>
+<div class="card-header">Data Pengumuman</div>
                             <div class="card-body">
                                 <div class="datatable">
                                     <table class="table table-bordered table-responsive table-hover" id="dataTable" width="100%" cellspacing="0">
+                                    <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#tbhNewsModal">Tambah Pengumuman</button>
                                 <tbody>
                                     <tr>
                                     <th>NO</th>
                                     
-                                    <th width="80"><i class="icon_pin_alt"></i> Username</th>
-                                    <th width="150"><i class="icon_calendar"></i> Pegawai</th>
-                                    <th width="150"><i class=""></i> Role Admin</th>
-                                    <th width="150"><i class=""></i> Role Tagihan</th>
-                                    <th width="150"><i class=""></i> Role Pelanggan</th>
-                                    <th width="150"><i class=""></i> Role Laporan</th>
+                                    <th width="80"><i class="icon_pin_alt"></i> Tanggal</th>
+                                    <th width="150"><i class="icon_calendar"></i> Isi Pengumuman</th>
+                                    <th width="150"><i class=""></i> Pegawai</th>
                                     <th width="150"><i class=""></i> Aksi</th>
                                     </tr>
                                     <?php
                                         $no = 1;
-                                        foreach($akun_app AS $row):
+                                        foreach($pengumuman AS $row):
                                     ?>
                                     <tr>
                                     <td><?= $no ?></td>
-                                    <td><?=$row->username?></td>
-                                       <td><?=$row->nm_pegawai?></td>
-                                       <td><?=$row->role_admin?></td>
-                                       <td><?=$row->role_tagihan?></td>
-                                       <td><?=$row->role_pelanggan?></td>
-                                       <td><?=$row->role_laporan?></td>
+                                    <td><?=$row->tgl_publish?></td>
+                                       <td><?=$row->isi_pengumuman?></td>
+                                       <td><?=$this->session->userdata("id_pegawai")?></td>
                                 
                                       
                            
                                    
                                         <td>
                                             <div class="btn-group">
-                                                <a class="btn btn-success" data-toggle="modal" data-target="#edtAkun<?php echo $row->username?>" ><i class="text-white" data-feather="edit"></i></a>
-                                                <a onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?')" class="btn btn-danger" href="<?php echo site_url('admin/akunapp/hapus_akun/'.$row->username) ?>"><i data-feather="delete"></i></a> 
+                                                <a class="btn btn-success" data-toggle="modal" data-target="#edtNewsModal" ><i class="text-white" data-feather="edit"></i></a>
+                                                <a onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini ?')" class="btn btn-danger" href="<?php echo site_url('admin/hapus_pelanggan/'.$row->id) ?>"><i data-feather="delete"></i></a> 
                                             </div>
                                         </td>
                                     </tr>
@@ -92,95 +125,45 @@
                         </section>
                        
                     </div>
-    <?php foreach($akun_app as $row){ ?>
-<div class="modal fade" id="edtAkun<?php echo $row->username?>" tabindex="-1" role="dialog" aria-labelledby="edtAkunTitle" aria-hidden="true">
+    <?php foreach($pengumuman as $row){ ?>
+<div class="modal fade" id="edtNewsModal" tabindex="-1" role="dialog" aria-labelledby="edtNewsModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="edtAkunTitle">Edit Akun  <?php echo $row->username?></h5>
+                <h5 class="modal-title" id="edtNewsModalTitle">Edit Pengumuman</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
             <div class="modal-body">
            
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url(). 'admin/akunapp/update_akun'; ?>">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url(). 'admin/pengumuman/update_pengumuman'; ?>">
                                 <div class="form-group ">
-                                   <label for="cname" class="control-label col-sm-2">Username <span
-                                       class="required">*</span></label>
-                                   <div class="col-md-10">
-                                   <input class="form-control" id="username" name="username"  type="text" value="<?php echo $row->username?>"
-                                       required />
-                                   </div>
-                               </div>
-                               <div class="form-group">
-                                   <label for="password" class="control-label col-sm-2">Password <span
-                                       class="required">*</span></label>
-                                   <div class="col-md-10">
-                                   <input class="form-control" id="password" name="password"  type="text"
-                                       required />
-                                   </div>
-                               </div>
-                               <div class="form-group ">
-                                <!-- pegawai -->
-                                      
-                                <div class="col-md-10">
-                                   <input class="form-control" id="id_pegawai" name="id_pegawai"  type="hidden" value="<?php echo $row->id_pegawai?>"
-                                      />
-                                 
-                                   </div>
-                               </div>
-   
-                       <div class="form-group ">
-                        <label for="role_admin" class="control-label ">Role Admin <span
-                         class="required">*</span></label>
-                         <div class="col-sm-2">
-                               <div class="custom-control custom-checkbox">
-                                   <input class="custom-control-input" id="role_admin" name="role_admin" type="checkbox" 
-                                            />
-                                   <label class="custom-control-label" for="role_admin">Aktif</label>
-                               </div>
-                        </div>
-                     
-                       </div>
+                                <div class="form-group ">
+                                    <label for="tanggal" class="control-label col-sm-2">Tanggal Publish <span
+                                        class="required">*</span></label>
+                                    <div class="col-md-10">
+                                    <input class="form-control" id="tgl_publish" name="tgl_publish" type="date" value="<?php echo $row->tgl_publish?>" required />
+                                    </div>
+                                </div>
+                           
 
-                       <div class="form-group ">
-
-                        <label for="stts_kerja" class="control-label ">Role Tagihan <span
-                         class="required">*</span></label>
-                         <div class="col-sm-2">
-                               <div class="custom-control custom-checkbox">
-                                   <input class="custom-control-input" id="role_tagihan" name="role_tagihan" type="checkbox" 
-                                            />
-                                           <label class="custom-control-label" for="role_tagihan">Aktif</label>
+                                <div class="form-group ">
+                                    <label for="alamat" class="control-label col-sm-2">Isi Pengumuman <span
+                                        class="required">*</span></label>
+                                    <div class="col-md-10">
+                                    <textarea class="form-control" id="isi_pengumuman" name="isi_pengumuman" value="<?php echo $row->isi_pengumuman?>" required></textarea>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group">
+                                    <label class="control-label col-lg-2">Pegawai <span class="required">*</span></label>
+                                    <div class="col-lg-10">
                                    
-                               </div>
-                        </div>
-                       </div>
+                                    <input class="form-control" id="id_pegawai" name="id_pegawai" type="text" value="<?php echo $this->session->userdata('id_pegawai')?>" required />
 
-                       <div class="form-group ">
-                        <label for="stts_kerja" class="control-label ">Role Pelanggan <span
-                         class="required">*</span></label>
-                         <div class="col-sm-2">
-                               <div class="custom-control custom-checkbox">
-                                   <input class="custom-control-input" id="role_pelanggan" name="role_pelanggan" type="checkbox" 
-                                            />
-                                           <label class="custom-control-label" for="role_pelanggan">Aktif</label>
-                               </div>
-                        </div>
-                       </div>
-                  
-
-                       <div class="form-group ">
-                        <label for="role_laporan" class="control-label ">Role Laporan <span
-                         class="required">*</span></label>
-                         <div class="col-sm-2">
-                               <div class="custom-control custom-checkbox">
-                                   <input class="custom-control-input" id="role_laporan" name="role_laporan" type="checkbox" 
-                                           />
-                                           <label class="custom-control-label" for="role_laporan">Aktif</label>
-                               </div>
-                        </div>
-                       
-                       </div>
+                                        
+                                   
+                                    </div>
+    </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-md-10">
                                     <button class="btn btn-primary" name="simpan" type="submit">Simpan</button>
@@ -190,7 +173,7 @@
                                 
            
             </div>
-          
+            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save changes</button></div>
         </div>
     </div>
 </div> 

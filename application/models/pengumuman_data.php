@@ -1,13 +1,17 @@
 <?php 
  
-class Akun_data extends CI_Model{
+class Pengumuman_data extends CI_Model{
 	function tampil_data(){
-   
-        $this->db->select('akun_app.*, pegawai.nm_pegawai'); 		
-        $this->db->from('akun_app'); 		
-        $this->db->join('pegawai', 'pegawai.id_pegawai=akun_app.id_pegawai'); 		
+
+        $this->db->select('pengumuman.*, pegawai.nm_pegawai'); 		
+        $this->db->from('pengumuman'); 		
+        $this->db->join('pegawai', 'pegawai.id_pegawai=pengumuman.id_pegawai'); 		
         $query = $this->db->get(); 		
         return $query->result();
+		// $this->db->select('pengumuman','ASC')
+        // ->join('pegawai','pegawai.id_pegawai=pengumuman.id_pegawai')
+        // ->get()
+        // ->result();
 	}
  
 	function input_data($data,$table){
@@ -15,9 +19,6 @@ class Akun_data extends CI_Model{
 	}
 
 	function edit_data($where,$table){		
-		return $this->db->get_where($table,$where);
-	}
-	function cek_login($where,$table){		
 		return $this->db->get_where($table,$where);
 	}
  

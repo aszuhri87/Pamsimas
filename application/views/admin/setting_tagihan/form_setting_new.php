@@ -1,12 +1,14 @@
 <div id="layoutSidenav_content">
+<div class="card-body">
+
+<!-- <div class="card-header card-flag-light"> data pegawai
+
+</div> -->
                 <main>
-                    <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
-                        <div class="container">
-                           <br><br>
-                        </div>
-                    </header>
+                   
+
                     <!-- Main page content-->
-                    <div class="container mt-n10">
+                    <div class="container mt-1">
                         <!-- <div class="row">
                             <div class="col-xxl-4 col-xl-12 mb-4">
                                 <div class="card h-100">
@@ -29,91 +31,125 @@
                            
                         </div> -->
                         <!-- Example Colored Cards for Dashboard Demo-->
-            <div class="row">
-                    <div class="col-lg-12">
-                        <h3 class="page-header"><i class="fa fa-files-o"></i> Form Ubah Data pegawai</h3>
-                        <ol class="breadcrumb">
-                            <li><i class="fa fa-home"></i><a href="../../index.php">Home</a></li>
-                            <li><i class="icon_document_alt"></i><a href="data_pegawai.php">Data pegawai</a></li>
-                            <li><i class="fa fa-files-o"></i>Form Ubah Data pegawai</a></li>
-                        </ol>
-                    </div>
-                </div>
-                <!-- Form validations -->
+               
+
+
+
+
+
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-md-12">
                         <section class="panel">
-                            <header class="panel-heading">
-                                Form Ubah pegawai
-                            </header>
-                            <div class="panel-body">
-                                <div class="form">
-                                <?php foreach($pegawai as $row){ ?>
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url(). 'admin/update_pegawai'; ?>">
-                                <input class="form-control" id="id_pegawai" name="id_pegawai"  type="text" hidden value="<?php echo $row->id_pegawai?>"/>
+                        
+<!-- modal -->
+
+<div class="modal fade" id="modal_Atur" tabindex="-1" role="dialog" aria-labelledby="tbSetTghModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="tbSetTghModalTitle">Atur Tagihan</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+            <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url(). 'admin/setting_tagihan/update'; ?>">
+                        
+                        <div class="form-group ">
+                            <label for="txt_biaya_denda" class="control-label">Biaya Denda <span
+                                class="required">*</span></label>
+                            <input class="form-control" id="txt_biaya_denda" name="txt_biaya_denda"  type="text"
+                                required />
+                        </div>
+                        <div class="form-group ">
+                            <label for="txt_biaya_tagihan" class="control-label  ">Biaya Tagihan<span
+                                class="required">*</span></label>
+                           
+                            <input class="form-control" id="txt_biaya_tagihan" name="txt_biaya_tagihan" type="text" 
+                                required />
+                            
+                        </div>
+                   
+
+                        <div class="form-group ">
+                            <label for="txt_biaya_perawatan" class="control-label">Biaya Perawatan<span
+                                class="required">*</span></label>
+                          
+                            <input class="form-control" id="txt_biaya_perawatan" name="txt_biaya_perawatan" value="" required></input>
+                         
+                        </div>
+
+
+                        <div class="form-group ">
+                            <label for="txt_biaya_daftar" class="control-label">Biaya Daftar <span
+                                class="required">*</span></label>
+                   
+                            <input class="form-control" id="txt_biaya_daftar" name="txt_biaya_daftar"  type="text"
+                                required />
+                          
+                        </div>
+                    
+                              
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-secondary" type="button" data-dismiss="modal">Tutup</button><button class="btn btn-primary" type="button">Simpan</button></div>
+            </form>
+                </div>
+               
+        </div>
+    </div>
+                            
+
+                        <div class="card mb-4">
+                            <div class="card-header">Setting Tagihan</div>
+                            <div class="card-body">
+                            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modal_Atur">Atur Tagihan</button>
+
+<div class="form">
+                                
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url(). 'admin/setting_tagihan/update'; ?>">
+                        
                                 <div class="form-group ">
-                                    <label for="cname" class="control-label col-sm-2">Nama Lengkap <span
+                                    <label for="cname" class="control-label  ">Biaya Denda <span
                                         class="required">*</span></label>
                                     <div class="col-md-10">
-                                    <input class="form-control" id="nm_pegawai" name="nm_pegawai"  type="text" value="<?php echo $row->nm_pegawai?>"
+                                    <input class="form-control" id="biaya_denda" name="biaya_denda"  type="text" value=""
                                         required />
                                     </div>
                                 </div>
                                 <div class="form-group ">
-                                    <label for="tempat" class="control-label col-sm-2">No HP <span
+                                    <label for="tempat" class="control-label  ">Biaya Tagihan<span
                                         class="required">*</span></label>
                                     <div class="col-md-10">
-                                    <input class="form-control" id="no_hp" name="no_hp" type="text" value="<?php echo $row->no_hp?>"
+                                    <input class="form-control" id="biaya_tagihan" name="biaya_tagihan" type="text" value=""
                                         required />
                                     </div>
                                 </div>
                            
 
                                 <div class="form-group ">
-                                    <label for="alamat" class="control-label col-sm-2">Alamat Lengkap <span
+                                    <label for="alamat" class="control-label  ">Biaya Perawatan<span
                                         class="required">*</span></label>
                                     <div class="col-md-10">
-                                    <textarea class="form-control" id="alamat" name="alamat" value="<?php echo $row->alamat?>" required></textarea>
+                                    <input class="form-control" id="biaya_perawatan" name="biaya_perawatan" value="" required></input>
                                     </div>
                                 </div>
     
+        
                                 <div class="form-group ">
-                                    <label for="stts_kerja" class="control-label col-lg-2">Status Kerja <span
-                                        class="required">*</span></label>
-                                    <div class="col-sm-2">
-                                         <div class="custom-control custom-radio">
-                                             <input class="custom-control-input" id="aktif" name="stts_kerja" type="radio" value="aktif"
-                                            required />
-                                              <label class="custom-control-label" for="aktif">Aktif</label>
-                                            </div>
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <div class="custom-control custom-radio">
-                                         <input class="custom-control-input" id="keluar" name="stts_kerja" type="radio" value="keluar"
-                                                        required />
-                                        <label class="custom-control-label" for="keluar">Keluar</label>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group ">
-                                    <label for="cname" class="control-label col-sm-2">Jabatan <span
+                                    <label for="cname" class="control-label  ">Biaya Daftar <span
                                         class="required">*</span></label>
                                     <div class="col-md-10">
-                                    <input class="form-control" id="jabatan" name="jabatan"  type="text" value="<?php echo $row->jabatan?>"
+                                    <input class="form-control" id="biaya_daftar" name="biaya_daftar"  type="text" value=""
                                         required />
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-sm-offset-2 col-md-10">
+                                  
                                     <button class="btn btn-primary" name="simpan" type="submit">Simpan</button>
-                                    </div>
+                                    
                                 </div>
                                 </form>
-                                <?php }?>
-                                     
-                                </div>
+                                <!--  -->
                 </div>
-
+                    </div>
                 </main>
                 <footer class="footer mt-auto footer-light">
                     <div class="container-fluid">
@@ -128,7 +164,10 @@
                     </div>
                 </footer>
             </div>
+</div></div>
+
         </div>
+                                   
         <script src="<?= base_url()?>sbadmin/code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="<?= base_url()?>sbadmin/stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" ></script>
         <script src="<?= base_url()?>sbadmin/themes.startbootstrap.com/sb-admin-pro/js/scripts.js"></script>
@@ -144,5 +183,4 @@
 
 <!-- Mirrored from themes.startbootstrap.com/sb-admin-pro/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 19 Oct 2020 10:49:55 GMT -->
 </html>
-
 
